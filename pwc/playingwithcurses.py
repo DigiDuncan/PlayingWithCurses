@@ -25,8 +25,13 @@ def curses_func(stdscr):
     bannery = int((height / 2) - (bannerheight / 2))
     bannerx = int((width / 2) - (bannerwidth / 2))
 
-    stdscr.addstr(bannerx, bannery, banner, curses.color_pair(1))
+    print(f"""
+Term Height: {height}
+Term Width: {width}
+Banner X: {bannerx}
+Banner Y: {bannery}""")
 
+    stdscr.addstr(bannerx, bannery, banner, curses.color_pair(1))
 
 
 def main():
