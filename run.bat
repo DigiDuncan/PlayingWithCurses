@@ -1,3 +1,3 @@
 @echo off
-py -3.8 playingwithcurses.py
+py -3.8 -m pwc
 pause
