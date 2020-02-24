@@ -1,4 +1,4 @@
-from pwc.main import main
+from pwc.playingwithcurses import main
 
 if __name__ == "__main__":
     main()
