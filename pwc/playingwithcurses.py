@@ -5,14 +5,22 @@ banner = (
     "+=====================+\n"
     "|    Playing With     |\n"
     "+=====================+\n"
-    "███ █ █ █▛▜ ███ ███ ███\n"
-    "█   █ █ █▙▟ █   █   █\n"
+    "███ █ █ ███ ███ ███ ███\n"
+    "█   █ █ ███ █   █   █\n"
     "█   █ █ █   ███ ███ ███\n"
     "█   █ █ ██    █ █     █\n"
     "███ ███ █ █ ███ ███ ███"
 )
 bannerheight = len(banner.split("\n"))
 bannerwidth = max(len(l) for l in banner.split("\n"))
+
+def printASCIIart(stdscr, y, x, art, color = 0):
+    artlist = art.split("\n")
+    cy = y
+    for line in artlist:
+        stdscr.addstr(cy, x, line, curses.color_pair(color))
+        cy += 1
+
 
 def curses_func(stdscr):
     stdscr.scrollok(True)
@@ -33,7 +41,7 @@ def curses_func(stdscr):
         f"Banner Y: {bannery}"
     )
 
-    stdscr.addstr(bannery, bannerx, banner, curses.color_pair(1))
+    printASCIIart(stdscr, bannery, bannerx, banner, 1)
 
     stdscr.refresh()
     stdscr.getch()
