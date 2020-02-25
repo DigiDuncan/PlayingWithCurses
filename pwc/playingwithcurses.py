@@ -1,21 +1,22 @@
 import curses
-from .colors import colors
+from pwc.colors import colors
 
-banner = """
-+=====================+
-|    Playing With     |
-+=====================+
-███ █ █ █▛▜ ███ ███ ███
-█   █ █ █▙▟ █   █   █
-█   █ █ █   ███ ███ ███
-█   █ █ ██    █ █     █
-███ ███ █ █ ███ ███ ███
-"""
-bannerheight = 8
-bannerwidth = 23
+banner = (
+    "+=====================+\n"
+    "|    Playing With     |\n"
+    "+=====================+\n"
+    "███ █ █ █▛▜ ███ ███ ███\n"
+    "█   █ █ █▙▟ █   █   █\n"
+    "█   █ █ █   ███ ███ ███\n"
+    "█   █ █ ██    █ █     █\n"
+    "███ ███ █ █ ███ ███ ███"
+)
+bannerheight = len(banner.split("\n"))
+bannerwidth = max(len(l) for l in banner.split("\n"))
 
 def curses_func(stdscr):
     stdscr.scrollok(True)
+
     # Clear screen
     stdscr.clear()
 
@@ -25,11 +26,13 @@ def curses_func(stdscr):
     bannery = int((height / 2) - (bannerheight / 2))
     bannerx = int((width / 2) - (bannerwidth / 2))
 
-    print(f"""
-Term Height: {height}
-Term Width: {width}
-Banner X: {bannerx}
-Banner Y: {bannery}""")
+    print(
+        f"Term Height: {height}\n"
+        f"Term Width: {width}\n"
+        f"Banner X: {bannerx}\n"
+        f"Banner Y: {bannery}"
+    )
+
     stdscr.addstr(bannery, bannerx, banner, curses.color_pair(1))
 
     stdscr.refresh()
