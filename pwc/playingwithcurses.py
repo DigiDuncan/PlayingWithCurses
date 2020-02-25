@@ -30,8 +30,8 @@ Term Height: {height}
 Term Width: {width}
 Banner X: {bannerx}
 Banner Y: {bannery}""")
+    stdscr.addstr(bannery, bannerx, banner, curses.color_pair(1))
 
-    stdscr.addstr(bannerx, bannery, banner, curses.color_pair(1))
 
 
 def main():
