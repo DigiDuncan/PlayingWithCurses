@@ -37,4 +37,7 @@ Banner Y: {bannery}""")
 def main():
     curses.wrapper(curses_func)
 
-main()
+
+# This is needed, or else calling `python -m pwc` will mean that main() is called twice
+if __name__ == "__main__":
+    main()
