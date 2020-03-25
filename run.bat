@@ -1,3 +1,3 @@
 @echo off
-py -3.8 -m pwc
+py -3.8 -m pwp
 pause

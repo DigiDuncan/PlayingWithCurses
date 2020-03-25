@@ -255,7 +255,7 @@ names = [
     'GREY_85',
     'GREY_89',
     'GREY_93'
-    ]
+]
 
 colors = {}
 
