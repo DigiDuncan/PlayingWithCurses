@@ -1,5 +1,5 @@
 import curses
-from pwc.colors import colors
+from pwp.lib.colors import colors
 
 banner = (
     "+=====================+\n"

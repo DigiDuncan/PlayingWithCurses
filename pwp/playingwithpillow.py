@@ -1,6 +1,12 @@
 from PIL import Image, ImageDraw, ImageFont
 
 
+def hexToTuple(h: int):
+    if h > 0xFFFFFF:
+        raise ValueError("Input must be a 6-digit hex value.")
+    return (h & 0xFF0000, h & 0x00FF00, h & 0x0000FF)
+
+
 def main():
     img = Image.new('RGB', (400, 120), color = (0x11, 0xCC, 0xCC))
     mc_font = ImageFont.truetype("S:/Fonts/1 Minecraft-Regular.otf", 32)
