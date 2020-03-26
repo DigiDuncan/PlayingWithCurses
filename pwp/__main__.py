@@ -1,4 +1,4 @@
-from pwp import playingwithcurses
+from pwp import playingwithpillow
 
 if __name__ == "__main__":
-    playingwithcurses.main()
+    playingwithpillow.main()

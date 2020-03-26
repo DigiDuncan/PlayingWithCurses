@@ -14,6 +14,7 @@ banner = (
 bannerheight = len(banner.split("\n"))
 bannerwidth = max(len(l) for l in banner.split("\n"))
 
+
 def printASCIIart(stdscr, y, x, art, color = 0):
     artlist = art.split("\n")
     cy = y
@@ -51,6 +52,6 @@ def main():
     curses.wrapper(curses_func)
 
 
-# This is needed, or else calling `python -m pwc` will mean that main() is called twice
+# This is needed, or else calling `python -m pwp` will mean that main() is called twice
 if __name__ == "__main__":
     main()
