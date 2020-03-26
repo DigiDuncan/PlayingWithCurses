@@ -570,6 +570,15 @@ class Color:
             return match.group(1) + " " + match.group(2).upper()
 
     def __str__(self):
+        return self.name
+
+    def __int__(self):
+        return self.value
+
+    def __hex__(self):
+        return hex(self.value)
+
+    def __repr__(self):
         return (f"Color ID {self.colorid}: {self.name}, #{hex(self.value)}")
 
     @classmethod
